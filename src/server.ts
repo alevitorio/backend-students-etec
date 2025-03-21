@@ -20,5 +20,5 @@ app.use(routes);
 
 // start the Express server
 app.listen(port, () => {
-    console.log(`server started at http://localhost:${port}`);
+    console.log(`server started at ${process.env.ENDPOINT_API}:${port}`);
 });
