@@ -8,7 +8,7 @@ export const gitController = {
   auth: (req: Request, res: Response) => {
     try {
       const redirectUrl = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&scope=user,repo`;
-      res.redirect(redirectUrl);
+   return   res.redirect(redirectUrl);
 
       res.status(200).json({ message: "Autenticado com sucesso" })
     } catch (error) {

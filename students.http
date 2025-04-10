@@ -1,0 +1,17 @@
+## Buscar students
+GET http://localhost:3000/students
+Accept: application/json
+
+## Create student
+### Criar novo aluno
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+  "name": "ALESSANDRO BARBOSA VITORIO",
+  "login": "asovitorio",
+  "email": "asovitorio@gmail.com",
+  "avatar": "https://avatars.githubusercontent.com/u/43097497?v=4",
+  "urlRepository": "https://github.com/asovitorio/exercicios-pwI"
+}
+
