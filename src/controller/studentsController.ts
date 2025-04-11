@@ -5,7 +5,11 @@ import { Request, Response } from 'express';
 export const studentsController = {
     findUser: async (req: Request, res: Response) => {
 
-        const students = await prisma.students.findMany()
+        const students = await prisma.students.findMany({
+            orderBy: {
+                name: 'asc',
+            }
+        })
         if (!students) {
             res.status(404).json({ message: 'No students found' });
         }
@@ -18,16 +22,16 @@ export const studentsController = {
             const existingStudent = await prisma.students.findUnique({
                 where: { login },
             });
-            
-            if(existingStudent) throw new Error("Student already exists");
+
+            if (existingStudent) throw new Error("Student already exists");
 
             const students = await prisma.students.create({
                 data: {
                     name,
                     email,
                     login,
-                    avatar:`https://github.com/${login}.png`,
-                    urlRepository:`https://github.com/${login}/exercicios-pwI`,
+                    avatar: `https://github.com/${login}.png`,
+                    urlRepository: `https://github.com/${login}/exercicios-pwI`,
 
                 }
             })

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { log } from "console";
 import { Request, Response } from "express";
 import { prisma } from "../databases/prisma-client";
 
@@ -7,8 +6,8 @@ export const gitController = {
 
   auth: (req: Request, res: Response) => {
     try {
-      const redirectUrl = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&scope=user,repo`;
-   return   res.redirect(redirectUrl);
+      const redirectUrl = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&scope=user,repo&prompt=consent`;
+      return res.redirect(redirectUrl);
 
       res.status(200).json({ message: "Autenticado com sucesso" })
     } catch (error) {
