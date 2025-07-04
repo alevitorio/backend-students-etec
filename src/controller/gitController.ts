@@ -31,7 +31,7 @@ export const gitController = {
           client_id: process.env.GITHUB_CLIENT_ID,
           client_secret: process.env.GITHUB_CLIENT_SECRET,
           code: code,
-          redirect_uri: 'http://localhost:3000/auth/github/callback',
+          redirect_uri: 'https://backend-students-etec.onrender.com/auth/github/callback',
         },
         headers: {
           accept: 'application/json',
