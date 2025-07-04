@@ -60,7 +60,7 @@ export const gitController = {
       const students = await prisma.students.create({
         data
       });
-      return res.status(201).json(students);
+      return res.redirect("https://alevitorio.github.io/front-students-etec/pages/lista-alunos.html");
 
     } catch (error) {
 
